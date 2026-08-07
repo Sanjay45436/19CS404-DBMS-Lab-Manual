@@ -104,124 +104,198 @@ CREATE TABLE Table_Name (
 ```
 
 **Question 1**
---
--- Paste Question 1 here
+---
+<img width="1197" height="319" alt="image" src="https://github.com/user-attachments/assets/c126dce7-e23c-4d5f-b9db-c44371aeba2c" />
 
-```sql
--- Paste your SQL code below for Question 1
+
+
+```
+ALTER TABLE Companies RENAME COLUMN name TO first_name;
+
+ALTER TABLE Companies ADD COLUMN mobilenumb number;
+
+ALTER TABLE Companies ADD COLUMN DOB Date;
+
+ALTER TABLE Companies ADD COLUMN State varchar(30);
+
 ```
 
 **Output:**
 
-![Output1](output.png)
+<img width="1265" height="374" alt="image" src="https://github.com/user-attachments/assets/0cae2f90-431b-4dc2-8afe-c2193e2aa7df" />
+
 
 **Question 2**
 ---
--- Paste Question 2 here
+<img width="902" height="438" alt="image" src="https://github.com/user-attachments/assets/af0b5b8e-a395-4b37-bb98-5c18e1de3606" />
 
-```sql
--- Paste your SQL code below for Question 2
+
+```
+
+ALTER TABLE Student_details
+ADD COLUMN mobilenumb number;
+
 ```
 
 **Output:**
 
-![Output2](output.png)
+<img width="1278" height="329" alt="image" src="https://github.com/user-attachments/assets/0c86b30d-b258-4daf-9e67-7e094f7f8e7d" />
+
 
 **Question 3**
 ---
--- Paste Question 3 here
+<img width="974" height="243" alt="image" src="https://github.com/user-attachments/assets/27f6ab9a-2ac7-4155-a121-484245be5754" />
 
-```sql
--- Paste your SQL code below for Question 3
+
+```
+
+CREATE TABLE Shipments (
+    ShipmentID INTEGER PRIMARY KEY,
+    ShipmentDate DATE,
+    SupplierID INTEGER,
+    OrderID INTEGER,
+    FOREIGN KEY (SupplierID) REFERENCES Suppliers(SupplierID),
+    FOREIGN KEY (OrderID) REFERENCES Orders(OrderID)
+);
+
 ```
 
 **Output:**
 
-![Output3](output.png)
+<img width="1262" height="233" alt="image" src="https://github.com/user-attachments/assets/afa7b811-8b67-4db0-ad31-b1cd1cea5150" />
+
 
 **Question 4**
 ---
--- Paste Question 4 here
+<img width="1170" height="254" alt="image" src="https://github.com/user-attachments/assets/7baa3790-6706-44ee-b7ef-958f0c331973" />
 
-```sql
--- Paste your SQL code below for Question 4
+
+```
+
+CREATE TABLE Department (
+    DepartmentID INTEGER PRIMARY KEY,
+    DepartmentName TEXT UNIQUE NOT NULL,
+    Location TEXT
+);
+
 ```
 
 **Output:**
 
-![Output4](output.png)
+<img width="1259" height="277" alt="image" src="https://github.com/user-attachments/assets/aefc4c4d-9833-42f2-b82d-8bc32ef2e842" />
+
 
 **Question 5**
 ---
--- Paste Question 5 here
+<img width="1248" height="262" alt="image" src="https://github.com/user-attachments/assets/63a85383-e727-4e3f-bae6-0bec295a8e86" />
 
-```sql
--- Paste your SQL code below for Question 5
+
+```
+CREATE TABLE Orders (
+    OrderID INTEGER PRIMARY KEY,
+    OrderDate DATE NOT NULL,
+    CustomerID INTEGER,
+    FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+);
+
 ```
 
 **Output:**
 
-![Output5](output.png)
+<img width="1266" height="265" alt="image" src="https://github.com/user-attachments/assets/a18426bd-a855-46bb-9abb-9d3273907db0" />
 
 **Question 6**
 ---
--- Paste Question 6 here
+<img width="868" height="350" alt="image" src="https://github.com/user-attachments/assets/2f5b5668-cf89-4b70-b918-c3e972f0ee7f" />
 
-```sql
--- Paste your SQL code below for Question 6
+
+```
+CREATE TABLE Reviews (
+    ReviewID INTEGER,
+    ProductID INTEGER,
+    Rating REAL,
+    ReviewText TEXT
+);
+
 ```
 
 **Output:**
 
-![Output6](output.png)
+<img width="1258" height="359" alt="image" src="https://github.com/user-attachments/assets/6f128077-1a0e-4569-b311-252fe6fffbdd" />
+
 
 **Question 7**
 ---
--- Paste Question 7 here
+<img width="862" height="285" alt="image" src="https://github.com/user-attachments/assets/9c9e91e8-ecd6-481d-b819-6fd2a4c90a79" />
 
-```sql
--- Paste your SQL code below for Question 7
+```
+INSERT INTO Books (ISBN, Title, Author, Publisher, YearPublished)
+SELECT ISBN, Title, Author, Publisher, YearPublished
+FROM Out_of_print_books;
+
 ```
 
 **Output:**
 
-![Output7](output.png)
+<img width="1271" height="274" alt="image" src="https://github.com/user-attachments/assets/44b1bfc6-fe0b-427e-90f4-84abe9b75c71" />
+
 
 **Question 8**
 ---
--- Paste Question 8 here
+<img width="1096" height="199" alt="image" src="https://github.com/user-attachments/assets/300e72e4-8ea6-45d8-8ade-bf7a81d66aea" />
 
-```sql
--- Paste your SQL code below for Question 8
+```
+INSERT INTO Books (ISBN, Title, Author, Publisher, Year)
+VALUES ('978-1234567890', 'Data Science Essentials', 'Jane Doe', 'TechBooks', 2024);
+
 ```
 
 **Output:**
 
-![Output8](output.png)
+<img width="1281" height="234" alt="image" src="https://github.com/user-attachments/assets/27106696-fa25-434d-a15c-f873db09e16c" />
+
 
 **Question 9**
 ---
--- Paste Question 9 here
+<img width="1420" height="379" alt="image" src="https://github.com/user-attachments/assets/e39783f2-8ef6-4f00-bb7f-676f4c63ca88" />
 
-```sql
--- Paste your SQL code below for Question 9
+```
+INSERT INTO Employee (EmployeeID, Name, Position, Department, Salary)
+VALUES (5, 'George Clark', 'Consultant', NULL, NULL);
+
+INSERT INTO Employee (EmployeeID, Name, Position, Department, Salary)
+VALUES (7, 'Noah Davis', 'Manager', 'HR', 60000);
+
+INSERT INTO Employee (EmployeeID, Name, Position, Department, Salary)
+VALUES (8, 'Ava Miller', 'Consultant', 'IT', NULL);
+
 ```
 
 **Output:**
 
-![Output9](output.png)
+<img width="1103" height="255" alt="image" src="https://github.com/user-attachments/assets/13e8a54e-faa4-465d-a7f3-8f3124a6e749" />
+
 
 **Question 10**
 ---
--- Paste Question 10 here
+<img width="1305" height="279" alt="image" src="https://github.com/user-attachments/assets/312ee585-f691-424a-924d-6f74d6354b87" />
 
-```sql
--- Paste your SQL code below for Question 10
+
+```
+CREATE TABLE Attendance (
+    AttendanceID INTEGER PRIMARY KEY,
+    EmployeeID INTEGER,
+    AttendanceDate DATE,
+    Status TEXT CHECK (Status IN ('Present', 'Absent', 'Leave')),
+    FOREIGN KEY (EmployeeID) REFERENCES Employees(EmployeeID)
+);
+
 ```
 
 **Output:**
 
-![Output10](output.png)
+<img width="1264" height="270" alt="image" src="https://github.com/user-attachments/assets/be1b5c00-fc27-4906-8d85-021349bcf28c" />
+
 
 
 ## RESULT
